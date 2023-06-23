@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ToDoItem from "./ToDoItem";
+import { styled } from "styled-components";
 
 const ToDoItemList = ( {reFetch, setReFetch}) => {
 
@@ -24,8 +25,8 @@ const ToDoItemList = ( {reFetch, setReFetch}) => {
 
     
 
-    return(
-        <>
+    return(        
+        <ListStyle>            
             <div>Working</div>
                 {toDoList && toDoList.filter(todo => !todo.isDone).map(todo => (
                     <ToDoItem 
@@ -34,7 +35,7 @@ const ToDoItemList = ( {reFetch, setReFetch}) => {
                     reFetch={reFetch}
                     setReFetch={setReFetch}
                     />
-                ))}
+                    ))}
             <div>Done</div>
                 {toDoList && toDoList.filter(todo => todo.isDone).map(todo => (
                     <ToDoItem 
@@ -43,9 +44,17 @@ const ToDoItemList = ( {reFetch, setReFetch}) => {
                     reFetch={reFetch}
                     setReFetch={setReFetch}
                     />
-                ))}
-        </>
+                    ))}
+        </ListStyle>       
     )
 }
  
 export default ToDoItemList;
+
+const ListStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+`
