@@ -7,7 +7,7 @@
       "id": 5
     },
     {
-      "isDone": true,
+      "isDone": false,
       "title": "리액트 공부하기",
       "content": "오늘부터 빡세게",
       "id": 6
@@ -19,7 +19,7 @@
       "id": 7
     },
     {
-      "isDone": false,
+      "isDone": true,
       "title": "제목2",
       "content": "내용2",
       "id": 8
