@@ -2,12 +2,11 @@ import axios from "axios";
 import { useState } from "react";
 import { styled } from "styled-components";
 
-const ToDoItem = ( {todo, reFetch, setReFetch} ) => {    
-  
-    
+const ToDoItem = ( {todo, reFetch, setReFetch} ) => {  
+
     const handleCompleteButton = (id) => {
         axios({
-            url: `http://localhost:8000/todos/${id}`,
+            url: `${process.env.REACT_APP_TODOS}/todos/${id}`,
             method: "PUT",            
             data:{
               "isDone": !todo.isDone,
@@ -28,7 +27,7 @@ const ToDoItem = ( {todo, reFetch, setReFetch} ) => {
     const deleteToDo = async (id) => {
         try {
           await axios.delete(
-            `http://localhost:8000/todos/${id}`,            
+            `${process.env.REACT_APP_TODOS}/todos/${id}`,            
           );
           setReFetch(!reFetch);
         } catch (error) {
