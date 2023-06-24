@@ -30,7 +30,10 @@ const Input = ({reFetch, setReFetch}) => {
                 setReFetch(!reFetch)
             }
         })
-        .catch(err => alert(err))
+        .catch(err => alert(
+       `이 axios 에러 메시지는 json-server를 열지 않으셔서 발생했습니다
+        https://github.com/junho01052/todo-list 이 url로 돌아가
+        READ.md파일 중 '실행방법3'을 다시한번 확인해주시길 바랍니다`))
 
         setTitle("")
         setContent("")
