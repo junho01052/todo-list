@@ -26,25 +26,31 @@ const ToDoItemList = ( {reFetch, setReFetch}) => {
     
 
     return(        
-        <ListStyle>            
-            <div>Working</div>
-                {toDoList && toDoList.filter(todo => !todo.isDone).map(todo => (
-                    <ToDoItem 
-                    key={todo.id}
-                    todo={todo}
-                    reFetch={reFetch}
-                    setReFetch={setReFetch}
-                    />
-                    ))}
-            <div>Done</div>
-                {toDoList && toDoList.filter(todo => todo.isDone).map(todo => (
-                    <ToDoItem 
-                    key={todo.id}
-                    todo={todo}
-                    reFetch={reFetch}
-                    setReFetch={setReFetch}
-                    />
-                    ))}
+        <ListStyle>
+            <ContainerStyle>
+                <h2>Working</h2>
+                <ToDoListBoxStyle>                    
+                    {toDoList && toDoList.filter(todo => !todo.isDone).map(todo => (
+                        <ToDoItem 
+                        key={todo.id}
+                        todo={todo}
+                        reFetch={reFetch}
+                        setReFetch={setReFetch}
+                        />
+                        ))}
+                </ToDoListBoxStyle>
+                <h2>Done</h2>
+                <ToDoListBoxStyle>   
+                    {toDoList && toDoList.filter(todo => todo.isDone).map(todo => (
+                        <ToDoItem 
+                        key={todo.id}
+                        todo={todo}
+                        reFetch={reFetch}
+                        setReFetch={setReFetch}
+                        />
+                        ))}
+                </ToDoListBoxStyle>   
+            </ContainerStyle>            
         </ListStyle>       
     )
 }
@@ -52,9 +58,20 @@ const ToDoItemList = ( {reFetch, setReFetch}) => {
 export default ToDoItemList;
 
 const ListStyle = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: flex;  
   justify-content: center;
   align-items: center;
-  margin-top: 5vh;
+  margin-top: 5vh;  
+`
+
+const ContainerStyle = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 1200px;  
+    
+`
+
+const ToDoListBoxStyle = styled.div`
+    display: flex;
+    flex-wrap: wrap;
 `

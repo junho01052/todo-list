@@ -57,7 +57,8 @@ const InputStyle = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5vh;
+  margin-top: 10vh;
+  width: 100%;
 
   input {
     font-size: 13px;

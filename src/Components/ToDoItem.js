@@ -36,7 +36,7 @@ const ToDoItem = ( {todo, reFetch, setReFetch} ) => {
         }
       };
 
-    return (          
+    return (
         <ToDoItemStyle>
             <TitleStyle>
                 <span>{todo.title}</span>                
@@ -45,8 +45,8 @@ const ToDoItem = ( {todo, reFetch, setReFetch} ) => {
             <div>
                 <button onClick={() => deleteToDo(todo.id)}>삭제하기</button>
                 {!todo.isDone ? <button onClick={()=>handleCompleteButton(todo.id)}>완료</button> : <button onClick={()=>handleCompleteButton(todo.id)}>취소</button>}                    
-             </div>
-        </ToDoItemStyle>        
+            </div>
+        </ToDoItemStyle> 
     )
 }
  
@@ -55,13 +55,15 @@ export default ToDoItem;
 const ToDoItemStyle = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 15px 10px 0px 10px;
   align-items: center;
-  margin-top: 5vh;
+  margin: 20px 10px 20px 10px;
   border-style: solid;
   border-radius: 10px;
-  width: 400px;
-  height: 300px;
+  width: 300px;
+  min-width: 300px;
+  height: 250px;  
 
   button {
     width: 80px;
@@ -76,5 +78,5 @@ const ToDoItemStyle = styled.div`
 
 const TitleStyle = styled.div`
   font-size: 25px;
-  font-weight: bold;
+  font-weight: bold;  
 `
