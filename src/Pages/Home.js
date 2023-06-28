@@ -1,4 +1,3 @@
-import Header from "UI/Header";
 import SignIn from "./SignIn";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
@@ -6,7 +5,6 @@ import { Link } from "react-router-dom";
 const Home = () => {
     return (
         <>
-            <Header />
             <SignIn />
             <Link to="/todo">
                 <H2Style>

@@ -1,10 +1,8 @@
 import { styled } from "styled-components";
-import Header from "UI/Header";
 
 const SignUp = () => {
     return  (
         <>
-            <Header />
             <SignUpStyle>
             <input
                 type="email"
